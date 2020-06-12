@@ -8,6 +8,7 @@
 
 
 Group.destroy_all
+User.destroy_all
 
 air = Group.create(name: "Air Tribe", description: "Air is the element of freedom.
     The Air Nomads detached themselves from worldly problems and concerns; 
@@ -26,7 +27,7 @@ fire = Group.create(name: "Fire Nation", description: "As described by Iroh, fir
     However, during the Hundred Year War, a militaristic Fire Nation twisted this into firebending being fueled by rage, hatred, and anger. 
     Firebending draws its power from the sun, and the first human firebenders derived their firebending techniques from the dragons.
     Firebending is known for its intense and aggressive attacking style and general lack of adequate defensive moves, although firebenders can modify offensive maneuvers to function as a defense, 
-    such as creating large walls of fire[2] or shooting down incoming attacks with fire jabs.", 
+    such as creating large walls of fire or shooting down incoming attacks with fire jabs.", 
     image: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c98d6a58-22e8-4f57-91f2-a0cef53bc2da/dcfgnk3-8eb4eba1-3c9d-4110-9ff9-67d0e3ffc248.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvYzk4ZDZhNTgtMjJlOC00ZjU3LTkxZjItYTBjZWY1M2JjMmRhXC9kY2ZnbmszLThlYjRlYmExLTNjOWQtNDExMC05ZmY5LTY3ZDBlM2ZmYzI0OC5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.1txObY__7Vikk645uZIgSz5K_Zica3mStvEKCoyn3Ys" )
 
 earth = Group.create(name: "Earth Nation", description: "Earth is the element of substance, while the people of the Earth Kingdom are diverse, strong, and enduring.
@@ -43,3 +44,5 @@ water = Group.create(name: "Water Tribe", description: "Water is the element of 
     Even when waterbenders do take an attack stance, their moves always appear to flow from one to the other.", 
     image: "https://vignette.wikia.nocookie.net/avatar/images/3/3e/Northern_Water_Tribe_Royal_Palace.png/revision/latest?cb=20140513180617" )
 
+jordan = User.create(name:"Jordan Melidor", age:24, zip:11372, picture:"https://static.jojowiki.com/images/thumb/6/69/Jotaro_SC_Infobox_Manga.png/270px-Jotaro_SC_Infobox_Manga.png", 
+    group_id: "")
