@@ -51,7 +51,7 @@ milkCereal = Topic.create(title: "Milk before cereal or cereal before milk?",
     content: "Whether you're eating Lucky Charms or Cheerios, you've got a go-to strategy for cereal pouring. 
         Most people say the tried-and-true method is cereal first, followed by some ice-cold milk—why would you do it any other way? 
         But others prefer their milk poured before their cereal, claiming it expands the longevity of the bowl, keeping the cereal crunchy for longer. How do you eat your cereal?",
-    likesCount: 0,
+    likesCount: 1,
     image: "https://kubrick.htvapps.com/htv-prod-media.s3.amazonaws.com/images/cereal-16x9-1525675492.png?crop=1.00xw:1.00xh;0,0&resize=900:*",
     user_id: "")
 
