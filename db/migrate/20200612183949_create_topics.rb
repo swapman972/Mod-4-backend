@@ -3,7 +3,7 @@ class CreateTopics < ActiveRecord::Migration[6.0]
     create_table :topics do |t|
       t.string :title
       t.string :content
-      t.integer :likes
+      t.integer :likesCount
       t.string :image
       t.integer :user_id
 

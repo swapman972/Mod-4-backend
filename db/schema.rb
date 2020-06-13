@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_06_12_184204) do
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
-    t.integer "likes"
+    t.integer "likesCount"
     t.integer "topic_id"
     t.integer "user_id"
     t.integer "group_id"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2020_06_12_184204) do
   create_table "topics", force: :cascade do |t|
     t.string "title"
     t.string "content"
-    t.integer "likes"
+    t.integer "likesCount"
     t.string "image"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
