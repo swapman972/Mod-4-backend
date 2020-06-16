@@ -14,8 +14,12 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.create(user_params)
-        render json: @user, except: [:created_at, :updated_at]
+        user = User.create(user_params)
+        if user.valid?
+          render json: @user, except: [:created_at, :updated_at], status: :created
+        else 
+          render json: { error: "failed to created user" }, status: :not_acceptable
+        end
     end
 
     def edit
