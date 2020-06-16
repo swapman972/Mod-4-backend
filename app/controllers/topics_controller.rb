@@ -1,7 +1,7 @@
 class TopicsController < ApplicationController
     def index
         topics = Topic.all
-        render json: topics, except: [:created_at, :updated_at]
+        render :json => topics.to_json(:include => { :comments => {:include => :user} })
     end
 
     def show

@@ -9,6 +9,8 @@
 
 Group.destroy_all
 User.destroy_all
+Topic.destroy_all
+Comment.destroy_all
 
 air = Group.create(name: "Air Tribe", description: "Air is the element of freedom.
     The Air Nomads detached themselves from worldly problems and concerns; 
@@ -44,14 +46,14 @@ water = Group.create(name: "Water Tribe", description: "Water is the element of 
     Even when waterbenders do take an attack stance, their moves always appear to flow from one to the other.", 
     image: "https://vignette.wikia.nocookie.net/avatar/images/3/3e/Northern_Water_Tribe_Royal_Palace.png/revision/latest?cb=20140513180617" )
 
-jordan = User.create(name:"Jotaro Kujo", age:24, zip:11372, picture:"https://static.jojowiki.com/images/thumb/6/69/Jotaro_SC_Infobox_Manga.png/270px-Jotaro_SC_Infobox_Manga.png", 
-    group_id: "")
+10.times do
+  User.create(name: Faker::JapaneseMedia::OnePiece.character, age: rand(10..50), zip: Faker::Number.number(digits: 5), picture: Faker::LoremFlickr.image(size: "50x60"), group_id: Group.all.sample.id)
+end
 
-milkCereal = Topic.create(title: "Milk before cereal or cereal before milk?", 
-    content: "Whether you're eating Lucky Charms or Cheerios, you've got a go-to strategy for cereal pouring. 
-        Most people say the tried-and-true method is cereal first, followed by some ice-cold milk—why would you do it any other way? 
-        But others prefer their milk poured before their cereal, claiming it expands the longevity of the bowl, keeping the cereal crunchy for longer. How do you eat your cereal?",
-    likesCount: 1,
-    image: "https://kubrick.htvapps.com/htv-prod-media.s3.amazonaws.com/images/cereal-16x9-1525675492.png?crop=1.00xw:1.00xh;0,0&resize=900:*",
-    user_id: "")
+25.times do
+  Topic.create(title: Faker::Lorem.sentence, content: Faker::Lorem.paragraph, user: User.all.sample)
+end
 
+50.times do
+  Comment.create(content: Faker::Lorem.paragraph, topic: Topic.all.sample, user: User.all.sample, group: Group.all.sample)
+end
