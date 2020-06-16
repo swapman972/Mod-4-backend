@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    skip_before_action :authorized, only: [:create]
+
     def index
         users = User.all
         render json: users, except: [:created_at, :updated_at]
@@ -16,10 +18,16 @@ class UsersController < ApplicationController
     def create
         user = User.create(user_params)
         if user.valid?
-          render json: @user, except: [:created_at, :updated_at], status: :created
+          token = encode_token(user_id: user.id)
+          # render json: @user, except: [:created_at, :updated_at], status: :created
+          render json: { user: user, jwt: token }, status: :created
         else 
-          render json: { error: "failed to created user" }, status: :not_acceptable
+          render json: { error: user.errors.full_messages }, status: :not_acceptable
         end
+    end
+
+    def profile
+      render json: current_user, status: :accepted
     end
 
     def edit
