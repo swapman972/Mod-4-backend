@@ -1,4 +1,6 @@
 class TopicsController < ApplicationController
+    skip_before_action :authorized
+
     def index
         topics = Topic.all
         render :json => topics.to_json(:include => { :comments => {:include => :user} })
@@ -6,7 +8,7 @@ class TopicsController < ApplicationController
 
     def show
         topic = Topic.find_by(id: params[:id])
-        render json: topic, except: [:created_at, :updated_at]
+        render :json => topic.to_json(:include => { :comments => {:include => :user} })
     end
 
     def new

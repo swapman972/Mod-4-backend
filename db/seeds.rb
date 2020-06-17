@@ -47,10 +47,28 @@ water = Group.create(name: "Water Tribe", description: "Water is the element of 
     image: "https://vignette.wikia.nocookie.net/avatar/images/3/3e/Northern_Water_Tribe_Royal_Palace.png/revision/latest?cb=20140513180617" )
 
 10.times do
-  User.create(name: Faker::JapaneseMedia::OnePiece.character, age: rand(10..50), zip: Faker::Number.number(digits: 5), picture: Faker::LoremFlickr.image(size: "50x60"), group_id: Group.all.sample.id)
+  User.create(name: Faker::JapaneseMedia::OnePiece.character, age: rand(21..50), zip: Faker::Number.number(digits: 5), picture: Faker::LoremFlickr.image(size: "50x60"), group_id: Group.all.sample.id, password: "test123")
 end
 
 jo = User.create(name: "jotaro", group_id: 2, age: 24, zip: 11236, picture: "https://i.pinimg.com/564x/3a/ef/5f/3aef5fd261969471188a142f214f88d5.jpg", password: "test")
+
+luffy = Topic.create(title: "Monkey D. Luffy", content: "strongest pirate alive", user: User.all.sample, image: "https://giffiles.alphacoders.com/354/35458.gif")
+chopper = Topic.create(title: "Tony Tony Chopper", content: "cutest doctor", user: User.all.sample, image: "https://media1.giphy.com/media/13Uqp5IGFpmDle/giphy.gif")
+cats = Topic.create(title: "Cats", content: "Cats are the best! This one for Nicky", user: User.all.sample, image: "https://i.gifer.com/UoQN.gif")
+dogs = Topic.create(title: "Dogs", content: "Dogs are the best", user: User.all.sample, image: "https://i.chzbgr.com/full/8038240768/h94B602D1/3-yawning-dogs-gif")
+pizzaNY = Topic.create(title: "New York Pizza", content: "Nothing like New York pizza", user: User.all.sample, image: "https://i.makeagif.com/media/8-18-2015/-ytpz3.gif")
+pizzaChicago = Topic.create(title: "Chicago Pizza", content: "Chicago pizza is better then New York pizza", user: User.all.sample, image: "https://giordanos.com/wp-content/uploads/Hero-image_1210-v2.jpg")
+phone = Topic.create(title: "CellPhones", content: "Children shouldn’t be allowed cell phones until they are over 18.", user: User.all.sample, image: "https://www.healingchoices.com/assets/users/chiro/1238/uploads/images/2019/06/phones.jpg")
+games = Topic.create(title: "VideoGames", content: "Playing video games is bad for health. Agree or disagree?", user: User.all.sample, image: "https://cdn.vox-cdn.com/thumbor/x8pw9O_UdeENcbV0kuZxfkKUgkE=/0x0:1920x1080/1200x800/filters:focal(807x387:1113x693)/cdn.vox-cdn.com/uploads/chorus_image/image/66927028/image.0.png")
+mirio = Topic.create(title: "Mirio Togata", content: "Strongest student of UA. Agree or disagree?", user: User.all.sample, image: "https://media1.tenor.com/images/b09c38581c3a626cf34a1a498ae504a5/tenor.gif?itemid=15812245")
+bakugo = Topic.create(title: "Bakugo Katsuki", content: "Grumpiest student of UA. Agree or disagree?", user: User.all.sample, image: "https://media1.tenor.com/images/a43c75f61ff77fc44bbbc68026fe601e/tenor.gif?itemid=10293940")
+xbox = Topic.create(title: "Xbox vs PS", content: "Xbox is better then PlayStation", user: User.all.sample, image: "https://cnet3.cbsistatic.com/img/DlUxD600YS90Fug6PLHsYi-jymY=/940x0/2020/02/25/7ec59c3d-5f66-4a32-ad55-6ab81d275ac2/xboxback.jpg")
+swimming = Topic.create(title: "Swimming", content: "Swimming is in the top 3 of most difficult sports", user: User.all.sample, image: "https://media3.giphy.com/media/TFXoCcEemsS1G/giphy.gif")
+messi = Topic.create(title: "Lionel Messi", content: "Best Soccer Player at the moment?", user: User.all.sample, image: "https://i2-prod.mirror.co.uk/incoming/article13260478.ece/ALTERNATES/s615b/0_La-Liga-Santander-FC-Barcelona-v-Alaves.jpg")
+ronaldo = Topic.create(title: "Christiano Ronaldo", content: "Best Soccer Player at the moment?", user: User.all.sample, image: "https://media.tenor.com/images/ec976aeff6b9320d316c92e66ad38d41/tenor.gif")
+phelps = Topic.create(title: "Michael Phelps", content: "Greatest athlete of all time", user: User.all.sample, image: "https://www.americangrit.com/wp-content/uploads/2018/01/Michael-Phelps.jpg")
+ 
+
 
 25.times do
   Topic.create(title: Faker::Lorem.sentence, content: Faker::Lorem.paragraph, user: User.all.sample)

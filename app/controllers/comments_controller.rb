@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+    skip_before_action :authorized
+
     def index
         comments = Comment.all
         render json: comments, except: [:created_at, :updated_at]
