@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+    skip_before_action :authorized
+    
     def index
         groups = Group.all
         render json: groups, except: [:created_at, :updated_at]

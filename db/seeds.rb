@@ -50,6 +50,8 @@ water = Group.create(name: "Water Tribe", description: "Water is the element of 
   User.create(name: Faker::JapaneseMedia::OnePiece.character, age: rand(10..50), zip: Faker::Number.number(digits: 5), picture: Faker::LoremFlickr.image(size: "50x60"), group_id: Group.all.sample.id)
 end
 
+jo = User.create(name: "jotaro", group_id: 2, age: 24, zip: 11236, picture: "https://i.pinimg.com/564x/3a/ef/5f/3aef5fd261969471188a142f214f88d5.jpg", password: "test")
+
 25.times do
   Topic.create(title: Faker::Lorem.sentence, content: Faker::Lorem.paragraph, user: User.all.sample)
 end
