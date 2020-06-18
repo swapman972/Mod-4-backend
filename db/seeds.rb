@@ -46,15 +46,19 @@ water = Group.create(name: "Water Tribe", description: "Water is the element of 
     Even when waterbenders do take an attack stance, their moves always appear to flow from one to the other.", 
     image: "https://vignette.wikia.nocookie.net/avatar/images/3/3e/Northern_Water_Tribe_Royal_Palace.png/revision/latest?cb=20140513180617" )
 
-10.times do
+5.times do
   User.create(name: Faker::JapaneseMedia::OnePiece.character, age: rand(21..50), zip: Faker::Number.number(digits: 5), picture: Faker::LoremFlickr.image(size: "50x60"), group_id: Group.all.sample.id, password: "test123")
 end
+5.times do
+  User.create(name: Faker::JapaneseMedia::DragonBall.character, age: rand(21..50), zip: Faker::Number.number(digits: 5), picture: Faker::LoremFlickr.image(size: "50x60"), group_id: Group.all.sample.id, password: "test123")
+end
 
-jo = User.create(name: "jotaro", group_id: 2, age: 24, zip: 11236, picture: "https://i.pinimg.com/564x/3a/ef/5f/3aef5fd261969471188a142f214f88d5.jpg", password: "test")
+allmight = User.create(name: "AllMight", age: 35, zip: Faker::Number.number(digits: 5), picture: "https://vignette.wikia.nocookie.net/bokunoheroacademia/images/5/55/All_Might_Hero_Form_Full_Body.png/revision/latest?cb=20190129015644", group_id: Group.all.sample.id, password: "test")
+jo = User.create(name: "Jotaro", group_id: 2, age: 24, zip: 11236, picture: "https://i.pinimg.com/564x/3a/ef/5f/3aef5fd261969471188a142f214f88d5.jpg", password: "test")
 
 luffy = Topic.create(title: "Monkey D. Luffy", content: "strongest pirate alive", user: User.all.sample, image: "https://giffiles.alphacoders.com/354/35458.gif")
-chopper = Topic.create(title: "Tony Tony Chopper", content: "cutest doctor", user: User.all.sample, image: "https://media1.giphy.com/media/13Uqp5IGFpmDle/giphy.gif")
 cats = Topic.create(title: "Cats", content: "Cats are the best! This one for Nicky", user: User.all.sample, image: "https://i.gifer.com/UoQN.gif")
+chopper = Topic.create(title: "Tony Tony Chopper", content: "cutest doctor", user: User.all.sample, image: "https://media1.giphy.com/media/13Uqp5IGFpmDle/giphy.gif")
 dogs = Topic.create(title: "Dogs", content: "Dogs are the best", user: User.all.sample, image: "https://i.chzbgr.com/full/8038240768/h94B602D1/3-yawning-dogs-gif")
 pizzaNY = Topic.create(title: "New York Pizza", content: "Nothing like New York pizza", user: User.all.sample, image: "https://i.makeagif.com/media/8-18-2015/-ytpz3.gif")
 pizzaChicago = Topic.create(title: "Chicago Pizza", content: "Chicago pizza is better then New York pizza", user: User.all.sample, image: "https://giordanos.com/wp-content/uploads/Hero-image_1210-v2.jpg")
@@ -69,11 +73,18 @@ ronaldo = Topic.create(title: "Christiano Ronaldo", content: "Best Soccer Player
 phelps = Topic.create(title: "Michael Phelps", content: "Greatest athlete of all time", user: User.all.sample, image: "https://www.americangrit.com/wp-content/uploads/2018/01/Michael-Phelps.jpg")
  
 
-
-25.times do
-  Topic.create(title: Faker::Lorem.sentence, content: Faker::Lorem.paragraph, user: User.all.sample)
+10.times do
+  Comment.create(content: Faker::TvShows::FamilyGuy.quote, topic: Topic.all.sample, user: User.all.sample, group: Group.all.sample)
 end
 
-50.times do
-  Comment.create(content: Faker::Lorem.paragraph, topic: Topic.all.sample, user: User.all.sample, group: Group.all.sample)
+10.times do
+  Comment.create(content: Faker::TvShows::Simpsons.quote, topic: Topic.all.sample, user: User.all.sample, group: Group.all.sample)
+end
+
+10.times do
+  Comment.create(content: Faker::Quotes::Shakespeare.as_you_like_it_quote, topic: Topic.all.sample, user: User.all.sample, group: Group.all.sample)
+end
+
+10.times do
+  Comment.create(content: Faker::Quotes::Shakespeare.hamlet_quote, topic: Topic.all.sample, user: User.all.sample, group: Group.all.sample)
 end
